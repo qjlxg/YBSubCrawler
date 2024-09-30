@@ -5,9 +5,9 @@ name: crawler
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-#  schedule:
-#    # 定时任务
-- cron: '0 */1 * * *'
+  schedule:
+    # 定时任务
+    - cron: '0 */1 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,4 +29,3 @@ jobs:
         run: ./gradlew  :test --tests "me.leon.NodeCrawler.crawl"
       - run: git config --global user.email "deadogone@gmail.com" &&git config --global user.name "github-ci"
       - run: chmod  777 ./up.sh && ./up.sh
-
