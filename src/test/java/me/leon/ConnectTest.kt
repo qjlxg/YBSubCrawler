@@ -9,9 +9,9 @@ class ConnectTest {
 
     @Test
     fun connect() {
-        println("www.baidu.com".connect())
-        println("www.baidu.com".ping())
-        println("www.baidu.com".connect(443))
+        println("www.tiltok.com".connect())
+        println("www.tiltok.com".ping())
+        println("www.tiltok.com".connect(443))
     }
 
     @Test
