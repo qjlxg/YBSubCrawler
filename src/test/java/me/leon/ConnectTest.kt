@@ -20,7 +20,7 @@ class ConnectTest {
         runBlocking {
             Parser.parseFromSub(POOL)
                 .map { it to async(DISPATCHER) { it.SERVER.quickConnect(it.serverPort, 2000) } }
-                .filter { it.second.await() > -1 }
+                .filter { it.second.await() > -5 }
                 .forEach {
                     println(it.first.info() + ":" + it.second)
                     NODE_OK.writeLine(it.first.toUri())
